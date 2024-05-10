@@ -48,4 +48,20 @@ public class Exercise05 {
         System.out.println("account username: " + account.username);
         System.out.println("account position: " + account.position.name);
     }
+
+    void question06() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Mời bạn nhập vào thông tin phòng ban");
+        Department department = new Department();
+
+        System.out.println("Nhập vào id:");
+        department.id = scanner.nextInt();
+
+        scanner.nextLine();
+        System.out.println("Nhập vào name:");
+        department.name = scanner.nextLine();
+
+        System.out.printf("Department[id=%d, name=%s]%n", department.id, department.name);
+    }
 }
