@@ -1,5 +1,10 @@
 package backend;
 
+import entity.HinhChuNhat;
+import entity.HinhHoc;
+import entity.HinhTron;
+import entity.PrimaryStudent;
+import entity.SecondaryStudent;
 import entity.Student;
 
 public class Exercise01 {
@@ -53,5 +58,41 @@ public class Exercise01 {
         System.out.println("s2 = " + s2);
         System.out.println("s3 = " + s3);
         System.out.println("Số lượng học sinh: " + Student.count);
+    }
+
+    public static void question06() {
+        Student s1 = new PrimaryStudent("A");
+        Student s2 = new PrimaryStudent("B");
+        Student s3 = new SecondaryStudent("C");
+        Student s4 = new SecondaryStudent("D");
+        Student s5 = new SecondaryStudent("E");
+        Student s6 = new SecondaryStudent("F");
+        System.out.println("Số lượng student: " + Student.count);
+        System.out.println("Số lượng primary student: " + PrimaryStudent.count);
+        System.out.println("Số lượng secondary student: " + SecondaryStudent.count);
+    }
+
+    public static void question07() {
+        Student s1 = new PrimaryStudent("A");
+        Student s2 = new PrimaryStudent("B");
+        Student s3 = new SecondaryStudent("C");
+        Student s4 = new SecondaryStudent("D");
+        Student s5 = new SecondaryStudent("E");
+        Student s6 = new SecondaryStudent("F");
+        Student s7 = new SecondaryStudent("G");
+        Student s8 = new SecondaryStudent("H");
+        System.out.println("Số lượng student: " + Student.count);
+        System.out.println("Số lượng primary student: " + PrimaryStudent.count);
+        System.out.println("Số lượng secondary student: " + SecondaryStudent.count);
+    }
+
+    public static void question08() {
+        HinhHoc h1 = new HinhTron(10.0);
+        HinhHoc h2 = new HinhTron(100.0);
+        HinhHoc h3 = new HinhTron(1000.0);
+        HinhChuNhat h4 = new HinhChuNhat(1.0, 2.0);
+        HinhChuNhat h5 = new HinhChuNhat(10.0, 20.0);
+        HinhChuNhat h6 = new HinhChuNhat(100.0, 200.0);
+        System.out.println("Số hình học là: " + HinhHoc.count);
     }
 }
