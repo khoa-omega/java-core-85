@@ -4,8 +4,11 @@ import entity.Student;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class Exercise01 {
     public static void question01() {
@@ -78,5 +81,27 @@ public class Exercise01 {
             }
         }
         System.out.println(l2);
+    }
+
+    public static void question06() {
+        Map<Integer, String> students = new HashMap<>();
+        students.put(1, "Hùng");
+        students.put(2, "Đức");
+
+        // In ra các key của students
+        Set<Integer> keys = students.keySet();
+        for (Integer key : keys) {
+            System.out.println("key = " + key);
+        }
+
+        // In ra value của students
+        for (String value : students.values()) {
+            System.out.println("value = " + value);
+        }
+
+        // In ra danh sách students được sắp xếp theo tên của student
+        List<String> list = new LinkedList<>(students.values());
+        Collections.sort(list);
+        System.out.println(list);
     }
 }
