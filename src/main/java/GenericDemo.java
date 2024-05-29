@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class GenericDemo {
     public static void main(String[] args) {
         // T: Type
@@ -19,6 +22,12 @@ public class GenericDemo {
 
         // Wildcard: extends, super, ?
         Circle<Integer> c3 = new Circle<>(123, "Blue");
+        List<Integer> circles = new ArrayList<>();
+        printSize(circles);
+    }
+
+    public static void printSize(List<?> list) {
+        System.out.println(list.size());
     }
 
     public static <T extends Number> void print(T type) {
