@@ -5,9 +5,9 @@ import com.vti.entity.User;
 import java.util.List;
 
 public interface IUserService {
-    List<User> findEmployeeByProjectId(int projectId);
+    List<User> findEmployeeAndManagerByProjectId(int projectId);
 
-    List<User> findManager();
+    User findAdminByEmailAndPassword(String email, String password);
 
-    User findManagerByEmailAndPassword(String email, String password);
+    int createEmployee(String fullName, String email);
 }

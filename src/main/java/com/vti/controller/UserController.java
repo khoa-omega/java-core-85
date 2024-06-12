@@ -10,21 +10,21 @@ import java.util.List;
 public class UserController {
     private IUserService service;
 
-    public List<User> findEmployeeByProjectId(int projectId) {
-        return service.findEmployeeByProjectId(projectId);
-    }
-
-    public List<User> findManager() {
-        return service.findManager();
+    public List<User> findEmployeeAndManagerByProjectId(int projectId) {
+        return service.findEmployeeAndManagerByProjectId(projectId);
     }
 
     /**
-     * @param email Email của manager
-     * @param password Mật khẩu của manager
-     * @return Thông tin manager tương ứng với email và password,
+     * @param email    Email của admin
+     * @param password Mật khẩu của admin
+     * @return Thông tin admin tương ứng với email và password,
      * hoặc null nếu đăng nhập thất bại
      */
-    public User findManagerByEmailAndPassword(String email, String password) {
-        return service.findManagerByEmailAndPassword(email, password);
+    public User findAdminByEmailAndPassword(String email, String password) {
+        return service.findAdminByEmailAndPassword(email, password);
+    }
+
+    public int createEmployee(String fullName, String email) {
+        return service.createEmployee(fullName, email);
     }
 }
