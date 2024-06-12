@@ -11,5 +11,5 @@ public interface IUserRepository {
 
     List<User> findManager() throws SQLException, IOException;
 
-    User findByEmailAndPassword(String email, String password) throws SQLException, IOException;
+    User findManagerByEmailAndPassword(String email, String password) throws SQLException, IOException;
 }

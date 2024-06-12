@@ -34,6 +34,7 @@ public class UserRepository implements IUserRepository {
                     user.setRole(User.Role.valueOf(role));
                     user.setProSkill(rs.getString("pro_skill"));
                     user.setExpInYear(rs.getInt("exp_in_year"));
+                    user.setProjectId(rs.getInt("project_id"));
                     users.add(user);
                 }
                 return users;
@@ -60,6 +61,7 @@ public class UserRepository implements IUserRepository {
                 user.setRole(User.Role.valueOf(role));
                 user.setProSkill(rs.getString("pro_skill"));
                 user.setExpInYear(rs.getInt("exp_in_year"));
+                user.setProjectId(rs.getInt("project_id"));
                 users.add(user);
             }
             return users;
@@ -67,8 +69,8 @@ public class UserRepository implements IUserRepository {
     }
 
     @Override
-    public User findByEmailAndPassword(String email, String password) throws SQLException, IOException {
-        String sql = "{CALL find_by_email_and_password(?, ?)}";
+    public User findManagerByEmailAndPassword(String email, String password) throws SQLException, IOException {
+        String sql = "{CALL find_manager_by_email_and_password(?, ?)}";
         try (
                 Connection connection = JdbcUtil.getConnection();
                 CallableStatement cStmt = connection.prepareCall(sql)
@@ -86,6 +88,7 @@ public class UserRepository implements IUserRepository {
                     user.setRole(User.Role.valueOf(role));
                     user.setProSkill(rs.getString("pro_skill"));
                     user.setExpInYear(rs.getInt("exp_in_year"));
+                    user.setProjectId(rs.getInt("project_id"));
                     return user;
                 }
                 return null;

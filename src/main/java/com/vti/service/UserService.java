@@ -22,9 +22,18 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public User findByEmailAndPassword(String email, String password) {
+    public List<User> findManager() {
         try {
-            return repository.findByEmailAndPassword(email, password);
+            return repository.findManager();
+        } catch (SQLException | IOException exception) {
+            return List.of();
+        }
+    }
+
+    @Override
+    public User findManagerByEmailAndPassword(String email, String password) {
+        try {
+            return repository.findManagerByEmailAndPassword(email, password);
         } catch (SQLException | IOException exception) {
             return null;
         }

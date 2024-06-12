@@ -14,13 +14,17 @@ public class UserController {
         return service.findEmployeeByProjectId(projectId);
     }
 
+    public List<User> findManager() {
+        return service.findManager();
+    }
+
     /**
-     * @param email    Email của user
-     * @param password Mật khẩu của user
-     * @return Thông tin user tương ứng với email và password,
+     * @param email Email của manager
+     * @param password Mật khẩu của manager
+     * @return Thông tin manager tương ứng với email và password,
      * hoặc null nếu đăng nhập thất bại
      */
-    public User findByEmailAndPassword(String email, String password) {
-        return service.findByEmailAndPassword(email, password);
+    public User findManagerByEmailAndPassword(String email, String password) {
+        return service.findManagerByEmailAndPassword(email, password);
     }
 }
